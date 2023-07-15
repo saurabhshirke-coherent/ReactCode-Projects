@@ -1,19 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
 import './App.css';
-import { Login } from './Login';
-import { Register } from './Register';
+import { LoginPage } from './Pages/LoginPage';
+import { HomePage } from './Pages/HomePage';
 
 function App() {
-  const [currentState, setCurrentState]= useState('login');
-  const toggleForm = (formName) => {
-    setCurrentState(formName);
-  }
   return (
-    <div className="App">
-      {
-        currentState === 'login' ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch = {toggleForm}/>
-      }
-    </div>
+   <Router>
+    <Routes>
+      <Route exact path='/' Component={LoginPage}/>
+      <Route exact path='/home' Component={HomePage}/>
+    </Routes>
+   </Router> 
   );
 }
 
