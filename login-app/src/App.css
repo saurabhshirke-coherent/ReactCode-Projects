@@ -5,16 +5,31 @@
   align-items: center;
   justify-content: center;
   /* background-image: linear-gradient(79deg, #7439db, #c66fbc 48%, #F7944d ); */
-  background: url('C:\Users\Saurabh Shirke\Desktop\ReactPractice\ReactCode-Projects\project-trippy\public\images\img-9.jpg');
+  background-image: url('C:\Users\Saurabh Shirke\Desktop\ReactPractice\ReactCode-Projects\login-app\src\Components\images\img-9.jpg');
   color: white;
   width: 100%;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   object-fit: contain;
 }
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
 .form-auth-container, .login-form, .register-form{
   display: flex;
   flex-direction: column;
 }
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
 .custom-button {
   position: absolute; /* Position the button */
   top: 0; /* Position from the top */
@@ -28,7 +43,7 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  background-color: none;
+  background: none;
 }
 
 
@@ -63,12 +78,15 @@ button{
   background-color: white;
   cursor: pointer;
   color: white;
-  background-color: green;
+  
+}
+.btn-submit{
+  background-color: darkgreen;
 }
 
-button:hover{
-  background-color: lightgreen;
-  color: darkgreen;
+.btn-submit:hover{
+  background-color: green;
+  color: black;
 }
 
 .btn-link{
@@ -77,5 +95,5 @@ button:hover{
   color: white;
 }
 h1{
-  color: lightgreen;
+  color: rgb(87, 230, 58);
 }
