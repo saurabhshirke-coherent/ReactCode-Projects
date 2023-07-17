@@ -264,6 +264,7 @@ export const Login = (props) =>{
         );
 
         if (user){
+			localStorage.setItem('userData',JSON.stringify(user));
 			setIsLoading(true);
             //Login Successful
             setLoginErr(false);
@@ -290,7 +291,7 @@ export const Login = (props) =>{
                 <input type="email" onChange={(e)=>setEmail(e.target.value)} className="email" placeholder="Enter Email ID" value={email}></input>
                 <label htmlFor ="password">Password</label>
                 <input type="password" onChange={(e)=> setPassword(e.target.value)} className="password" placeholder="Enter Password" value={password}></input>
-                <button type="submit">Log In</button>
+                <button className="btn-submit" type="submit">Log In</button>
             </form>
             <button className="btn-link" onClick={()=>props.onFormSwitch('register')}>Not a Registered User?? Register Here</button>
 			{
