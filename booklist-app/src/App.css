@@ -1,0 +1,53 @@
+.App{
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color:wheat;
+  background:linear-gradient(120deg, crimson, burlywood 49%, rgb(203, 176, 101) 9%) ;
+  /* background-image:url('C:\Users\Saurabh Shirke\Desktop\ReactPractice\ReactCode-Projects\booklist-app\src\images\book_lib4.jpg') ; */
+  font-family:'Times New Roman', Times, serif;
+  background-position: 100%;
+}
+h1{
+  font-size:40px;
+}
+.searchbar{
+  margin:0.5rem;
+  border:none;
+  border-radius: 10px;
+  padding: 1rem;
+  width:80%;
+  color:brown;
+}
+.search-submit{
+  padding:1rem 2rem;
+  margin:0.5rem 0;
+  border:1px solid burlywood;
+  border-radius: 10px;
+  color: brown;
+  background-color: burlywood;
+  font-weight: bold;
+  cursor: pointer;
+}
+.search-submit:hover{
+  color: white;
+  background-color: brown;
+  border:1px solid brown;
+}
+.book-result-container{
+  border:2px solid white;
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  margin:3rem 2rem; 
+  color:white;
+}
+table{
+  width: 100%;
+  text-align: center;
+}
+
+th{
+  font-weight: bold;
+}
