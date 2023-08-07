@@ -1,12 +1,15 @@
 .cards {
     padding: 4rem;
-    background: #fff;
+    background: whitesmoke;
   }
   
   h1 {
     text-align: center;
   }
   
+  .cards-scroll-container {
+    overflow-x: auto;
+  }
   .cards__container {
     display: flex;
     flex-flow: column;
@@ -18,11 +21,12 @@
   
   .cards__wrapper {
     position: relative;
-    margin: 50px 0 45px;
+    margin: 30px 0 45px;
+    padding:.5rem;
   }
   
   .cards__items {
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
   
   .cards__item {

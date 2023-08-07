@@ -6,7 +6,7 @@
   }
   
   .home,
-  .services,
+  .description,
   .products,
   .sign-up {
     display: flex;
@@ -20,7 +20,7 @@
     font-size:16px;
   }
   
-  .services {
+  .description {
     background-image: url('C:\Users\Saurabh Shirke\Desktop\ReactPractice\ReactCode-Projects\project-trippy\public\images\img-2.jpg');
     background-position: center;
     background-size: cover;
