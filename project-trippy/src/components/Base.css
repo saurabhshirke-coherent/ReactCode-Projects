@@ -119,5 +119,15 @@ video {
     cursor: pointer;
     color: white; 
   }
-
+  .suggestions-container {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    top:100%;
+    cursor: pointer;
+  }
   

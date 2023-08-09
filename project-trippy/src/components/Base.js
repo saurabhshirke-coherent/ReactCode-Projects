@@ -19,33 +19,49 @@ function Base() {
   const [productSearchParam, setProductSearchParam] = useState('');
   const [userData, setUserData] = useState(null);
   const [productCategory, setProductCategory] = useState(null);
-
+  const [message, setMessage] = useState('');
+  
   useEffect(() => {
     fetchProducts();
     fetchProductCategory();
   }, []);
 
-  const handleSubmit = (e) =>{
-    console.log(productSearchParam);
-    
-    descHist('/description');
+  //API Post for searching product:
+  const handleSubmit = async(e) =>{
+    e.preventDefault();
+    // console.log(productSearchParam);  
+    try {
+      const titleResponse = await axios.get(`https://fakestoreapi.com/products?title=${productSearchParam}`);
+      const matchingProduct = titleResponse.data.find(product => product.title === productSearchParam);
+  
+      if (matchingProduct) {
+        localStorage.setItem('Title', JSON.stringify(matchingProduct));
+        descHist('/description');
+      } else {
+        setMessage('No matching product found !');
+        // console.log('No matching product found');
+      }
+    } catch (error) {
+      console.error('Error fetching product details:', error);
+    }
   }
 
+  //API call for all product show:
   const fetchProducts = async () => {
     try {
       const response = await axios.get('https://fakestoreapi.com/products');
       setUserData(response.data);
-      console.log(response.data[0]);
+      // console.log(response.data);
     } catch (error) {
       console.error('Error fetching product List:', error);
     }
   }
-
+// API call for category of products show:
   const fetchProductCategory = async () => {
     try {
       const Categoryresponse = await axios.get('https://fakestoreapi.com/products/categories');
       setProductCategory(Categoryresponse.data);
-      console.log(Categoryresponse);
+      // console.log(Categoryresponse);
     } catch (error) {
       console.error('Error fetching product List:', error);
     }
@@ -60,12 +76,12 @@ function Base() {
         <form className='product-search-container' onSubmit={handleSubmit}>
         <input type='text' onChange={(e)=>setProductSearchParam(e.target.value)} placeholder='Search for Product Here...' className='search-bar' value={productSearchParam}/>
             <button type="submit" className="btn-submit" >SEARCH</button>
-          
         </form>
+        {
+          message && <p>{message}</p>
+        }
       </div>
       {/* Base Container Code Ends */}
-
-
 
       {/* Cards Container Code Starts */}
       {
@@ -82,7 +98,8 @@ function Base() {
                         src={product.image}
                         text={product.title}
                         label={product.category}
-                        path='/description'
+                        product={product}
+                        path={`/description/${product.id}`}
                       />
                     ))}
                   </ul>
@@ -98,15 +115,18 @@ function Base() {
       {
         productCategory && (
           <div className='cards'>
+            <h1>Choose from our Category</h1>
             <div className='cards__container'>
               <div className='cards__wrapper'>
                 <ul className='cards__items'>
                   {productCategory.map((category) => (
                     <CardItem
+                      key={category}
                       src='images/image-10.jpg'
                       text={category}
                       label={category}
-                      path='/'
+                      category
+                      path={`/product-view/${category}`}
                     />
                   ))}
                 </ul>
@@ -141,7 +161,7 @@ function Base() {
           <div className='footer-link-wrapper'>
             <div class='footer-link-items'>
               <h2>About Us</h2>
-              <Link to='/sign-up'>How it works</Link>
+              <Link to='/user-view'>How it works</Link>
               <Link to='/'>Testimonials</Link>
               <Link to='/'>Careers</Link>
               <Link to='/'>Investors</Link>
@@ -228,7 +248,6 @@ function Base() {
       </div>
       {/* Footer Container Code Ends */}
     </>
-
   )
 }
 

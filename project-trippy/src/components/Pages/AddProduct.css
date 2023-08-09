@@ -1,0 +1,67 @@
+.add-product{
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:url('C:\Users\Saurabh Shirke\Desktop\ReactPractice\ReactCode-Projects\project-trippy\public\images\image-10.jpg') ;
+    color: white;
+    width: 100%;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+.add-product-container{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+@media screen and (min-width : 600px){
+    .addproduct-form-container {
+      margin: 0.5rem;
+      padding: 5rem;
+      border: 1px solid white;
+      border-radius: 10px;
+    } 
+  }
+
+.addproduct-form-container {
+    display: flex;
+    flex-direction: column;
+}
+label{
+    text-align: left;
+    padding: 0.25rem 0;
+  }
+  
+  input{
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    border: none;
+  }
+  select{
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    border: none;
+  }
+  
+  button{
+    border: none;
+    margin: 0.5rem 0;
+    padding: 1rem 0;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+    color: white;
+    
+  }
+  .btn-submit{
+    background-color: white;
+  }
+  .btn-submit:hover{
+    background-color: gainsboro;
+    color: black;
+  }
+  

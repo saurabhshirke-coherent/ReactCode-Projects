@@ -41,15 +41,6 @@ function Navbar() {
                 Home
               </Link>
             </li>
-            {/* <li className='nav-item'>
-              <Link
-                to='/products'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Products
-              </Link>
-            </li> */}
             <li className='nav-item'>
               <Link
                 to='/products'
@@ -61,19 +52,18 @@ function Navbar() {
             </li>
             <li>
               <Link
-                to='/products'
+                to='/user-view'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
-                Sign Up
+                User Portal
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+          {button && <Button buttonStyle='btn--outline'>User Portal</Button>}
         </div>
       </nav>
     </>
   );
 }
-
 export default Navbar;
